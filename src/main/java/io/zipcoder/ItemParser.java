@@ -98,16 +98,20 @@ public class ItemParser {
     public void output() {
         doEverythingBesidesOutput();
         for (int i = 0; i < milkData.getFoodPrices().size(); i++) {
-            System.out.println(String.format("%-15s%10s%15s%2d%5s", "name:", "Milk", "seen: ", 0, " times"));
+            System.out.println(String.format("%-15s%10s%15s%2d%5s", "name:", "Milk", "seen: ", milkData.getFoodPrices().size(), " times"));
+            System.out.println("===============================================");
         }
         for (int j = 0; j < cookieData.getFoodPrices().size(); j++) {
-            System.out.println(String.format("%-15s%10s%15s%2d%5s", "name:", "Cookies", "seen: ", 0, " times"));
+            System.out.println(String.format("%-15s%10s%15s%2d%5s", "name:", "Cookies", "seen: ", cookieData.getFoodPrices().size(), " times"));
+            System.out.println("===============================================");
         }
         for (int k = 0; k < breadData.getFoodPrices().size(); k++) {
-            System.out.println(String.format("%-15s%10s%15s%2d%5s", "name:", "Bread", "seen: ", 0, " times"));
+            System.out.println(String.format("%-15s%10s%15s%2d%5s", "name:", "Bread", "seen: ", breadData.getFoodPrices().size(), " times"));
+            System.out.println("===============================================");
         }
         for (int l = 0; l < appleData.getFoodPrices().size(); l++) {
-            System.out.println(String.format("%-15s%10s%15s%2d%5s", "name:", "Apple", "seen: ", 0, " times"));
+            System.out.println(String.format("%-15s%10s%15s%2d%5s", "name:", "Apple", "seen: ", appleData.getFoodPrices().size(), " times"));
+            System.out.println("===============================================");
         }
         System.out.println("Exceptions: " + errorCounter);
     }
