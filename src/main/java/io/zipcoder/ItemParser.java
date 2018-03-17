@@ -40,14 +40,14 @@ public class ItemParser {
         try {
             char firstLetter = name.toLowerCase().charAt(0);
             if (firstLetter == 'm') return "Milk";
-            if (firstLetter == 'c') return "Cookie";
-            if (firstLetter == 'a') return "Apple";
+            if (firstLetter == 'c') return "Cookies";
+            if (firstLetter == 'a') return "Apples";
             if (firstLetter == 'b') return "Bread";
+            else return "What?";
         } catch (Exception e) {
             errorCounter++;
-            return "What?";
+            return "What??";
         }
-        return "How did the program even get here lol";
     }
 
 }

@@ -62,7 +62,21 @@ public class ItemParserTest {
 
     @Test
     public void nameFixerTest() {
-
+        String cookieExpected = "Cookies";
+        String milkExpected = "Milk";
+        String breadExpected = "Bread";
+        String applesExpected = "Apples";
+        String whatExpected = "What?";
+        String cookieActual = itemParser.nameFixer("CO0kie");
+        String milkActual = itemParser.nameFixer("MILK");
+        String breadActual = itemParser.nameFixer("BREad");
+        String applesActual = itemParser.nameFixer("AppLES");
+        String whatActual = itemParser.nameFixer("some bullshit");
+        Assert.assertEquals(cookieExpected, cookieActual);
+        Assert.assertEquals(milkExpected, milkActual);
+        Assert.assertEquals(breadExpected, breadActual);
+        Assert.assertEquals(applesExpected, applesActual);
+        Assert.assertEquals(whatExpected, whatActual);
     }
 
 }
