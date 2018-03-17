@@ -95,6 +95,8 @@ public class ItemParser {
                 if (nameFixer(temp[1]).equals("Apples")) {
                     appleData.addNewPriceToList(Double.parseDouble(temp[3]));
                 }
+            } else {
+                errorCounter++;
             }
         }
     }
