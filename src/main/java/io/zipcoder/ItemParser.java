@@ -81,18 +81,20 @@ public class ItemParser {
         ArrayList<String> arrayList = parseRawDataIntoStringArray(input);
         for (int i = 0; i < arrayList.size(); i++) {
             // everything happens here lol
-            String[] temp = arrayList.get(i).split("[;:|^]");
-            if (nameFixer(temp[1]).equals("Cookies")) {
-                cookieData.addNewPriceToList(Double.parseDouble(temp[3]));
-            }
-            if (nameFixer(temp[1]).equals("Milk")) {
-                milkData.addNewPriceToList(Double.parseDouble(temp[3]));
-            }
-            if (nameFixer(temp[1]).equals("Bread")) {
-                breadData.addNewPriceToList(Double.parseDouble(temp[3]));
-            }
-            if (nameFixer(temp[1]).equals("Apples")) {
-                appleData.addNewPriceToList(Double.parseDouble(temp[3]));
+            String[] temp = arrayList.get(i).split("[;:|^@!*%]");
+            if (!temp[1].equals("") && !temp[3].equals("") && !temp[5].equals("") && !temp[7].equals("")) {
+                if (nameFixer(temp[1]).equals("Cookies")) {
+                    cookieData.addNewPriceToList(Double.parseDouble(temp[3]));
+                }
+                if (nameFixer(temp[1]).equals("Milk")) {
+                    milkData.addNewPriceToList(Double.parseDouble(temp[3]));
+                }
+                if (nameFixer(temp[1]).equals("Bread")) {
+                    breadData.addNewPriceToList(Double.parseDouble(temp[3]));
+                }
+                if (nameFixer(temp[1]).equals("Apples")) {
+                    appleData.addNewPriceToList(Double.parseDouble(temp[3]));
+                }
             }
         }
     }
