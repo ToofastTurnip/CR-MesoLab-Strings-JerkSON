@@ -59,4 +59,10 @@ public class ItemParserTest {
         Integer actual = itemParser.findKeyValuePairsInRawItemData(rawSingleItemIrregularSeperatorSample).size();
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void nameFixerTest() {
+
+    }
+
 }
