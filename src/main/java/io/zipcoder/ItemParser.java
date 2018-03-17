@@ -5,16 +5,20 @@ import io.zipcoder.FoodData.BreadData;
 import io.zipcoder.FoodData.CookieData;
 import io.zipcoder.FoodData.MilkData;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class ItemParser {
 
-    int errorCounter = 0;
-    MilkData milkData = new MilkData();
-    CookieData cookieData = new CookieData();
-    BreadData breadData = new BreadData();
-    AppleData appleData = new AppleData();
+    private int errorCounter = 0;
+    private MilkData milkData = new MilkData();
+    private CookieData cookieData = new CookieData();
+    private BreadData breadData = new BreadData();
+    private AppleData appleData = new AppleData();
+    String fileName = "RawData.txt";
 
     public ArrayList<String> parseRawDataIntoStringArray(String rawData){
         String stringPattern = "##";
@@ -47,6 +51,36 @@ public class ItemParser {
         } catch (Exception e) {
             errorCounter++;
             return "What??";
+        }
+    }
+
+    public String outputBuilder() {
+        StringBuilder sb = new StringBuilder();
+        // Build dat table boy
+        return sb.toString();
+    }
+
+    public String fileToString(String filename) {
+        StringBuilder result = new StringBuilder("");
+        ClassLoader classLoader = ItemParser.class.getClassLoader();
+        File file = new File(classLoader.getResource(filename).getFile());
+        try (Scanner scanner = new Scanner(file)) {
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                result.append(line).append("\n");
+            }
+            scanner.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result.toString();
+    }
+
+    public void doEverything() {
+        String input = fileToString(fileName);
+        ArrayList<String> arrayList = parseRawDataIntoStringArray(input);
+        for (int i = 0; i < arrayList.size(); i++) {
+            // everything happens here lol
         }
     }
 
