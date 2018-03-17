@@ -97,7 +97,19 @@ public class ItemParser {
 
     public void output() {
         doEverythingBesidesOutput();
-        // format time ugh
+        for (int i = 0; i < milkData.getFoodPrices().size(); i++) {
+            System.out.println(String.format("%-15s%10s%15s%2d%5s", "name:", "Milk", "seen: ", 0, " times"));
+        }
+        for (int j = 0; j < cookieData.getFoodPrices().size(); j++) {
+            System.out.println(String.format("%-15s%10s%15s%2d%5s", "name:", "Cookies", "seen: ", 0, " times"));
+        }
+        for (int k = 0; k < breadData.getFoodPrices().size(); k++) {
+            System.out.println(String.format("%-15s%10s%15s%2d%5s", "name:", "Bread", "seen: ", 0, " times"));
+        }
+        for (int l = 0; l < appleData.getFoodPrices().size(); l++) {
+            System.out.println(String.format("%-15s%10s%15s%2d%5s", "name:", "Apple", "seen: ", 0, " times"));
+        }
+        System.out.println("Exceptions: " + errorCounter);
     }
 
 }
