@@ -79,4 +79,9 @@ public class ItemParserTest {
         Assert.assertEquals(whatExpected, whatActual);
     }
 
+    @Test
+    public void outputTest() {
+        itemParser.output();
+    }
+
 }

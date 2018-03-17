@@ -54,12 +54,6 @@ public class ItemParser {
         }
     }
 
-    public String outputBuilder() {
-        StringBuilder sb = new StringBuilder();
-        // Build dat table boy
-        return sb.toString();
-    }
-
     public String fileToString(String filename) {
         StringBuilder result = new StringBuilder("");
         ClassLoader classLoader = ItemParser.class.getClassLoader();
@@ -76,12 +70,12 @@ public class ItemParser {
         return result.toString();
     }
 
-    public void doEverything() {
+    public void doEverythingBesidesOutput() {
         String input = fileToString(fileName);
         ArrayList<String> arrayList = parseRawDataIntoStringArray(input);
-        for (int i = 0; i < arrayList.size(); i++) {
+        for (String anArrayList : arrayList) {
             // everything happens here lol
-            String[] temp = arrayList.get(i).split("[;:|^@!*%]");
+            String[] temp = anArrayList.split("[;:|^@!*%]");
             if (!temp[1].equals("") && !temp[3].equals("") && !temp[5].equals("") && !temp[7].equals("")) {
                 if (nameFixer(temp[1]).equals("Cookies")) {
                     cookieData.addNewPriceToList(Double.parseDouble(temp[3]));
@@ -99,6 +93,11 @@ public class ItemParser {
                 errorCounter++;
             }
         }
+    }
+
+    public void output() {
+        doEverythingBesidesOutput();
+        // format time ugh
     }
 
 }
