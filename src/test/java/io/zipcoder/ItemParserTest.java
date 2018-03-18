@@ -80,7 +80,7 @@ public class ItemParserTest {
     }
 
     @Test
-    public void outputTest() {
+    public void runProductionInATestEnvironmentLol() {
         itemParser.output();
     }
 
