@@ -21,8 +21,9 @@ public class ItemParser {
     String fileName = "RawData.txt";
 
     public ArrayList<String> parseRawDataIntoStringArray(String rawData){
+        String rawDataFix = rawData.substring(0, rawData.length() - 2);
         String stringPattern = "##";
-        ArrayList<String> response = splitStringWithRegexPattern(stringPattern , rawData);
+        ArrayList<String> response = splitStringWithRegexPattern(stringPattern , rawDataFix);
         return response;
     }
 
@@ -75,7 +76,7 @@ public class ItemParser {
         ArrayList<String> arrayList = parseRawDataIntoStringArray(input);
         for (String anArrayList : arrayList) {
             // everything happens here lol
-            String[] temp = anArrayList.split("[;:|^@!*%]");
+            String[] temp = anArrayList.split("([;:|^@!*%])");
             if (!temp[1].equals("") && !temp[3].equals("") && !temp[5].equals("") && !temp[7].equals("")) {
                 if (nameFixer(temp[1]).equals("Cookies")) {
                     cookieData.addNewPriceToList(Double.parseDouble(temp[3]));
